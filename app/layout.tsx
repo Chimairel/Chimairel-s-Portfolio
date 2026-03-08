@@ -1,15 +1,19 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
-
-import "./globals.css"
+import { Space_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import "styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+export const metadata: Metadata = {
+  title: "Chimialrel's Portfolio",
+  description: "Chimairel Pacaldo BSIT - 3B | Portfolio Website",
+};
 
-const fontMono = Geist_Mono({
+const spaceMono = Space_Mono({
+  weight: ["400", "700"], 
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-sans"
+});
 
 export default function RootLayout({
   children,
@@ -20,7 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn("antialiased font-sans", spaceMono.variable)}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
