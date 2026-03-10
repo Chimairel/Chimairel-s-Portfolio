@@ -2,10 +2,8 @@ import { RetroWindow } from "@/components/common/RetroWindow";
 
 export function CodeEditorBio() {
   return (
-    // Added noPadding here!
     <RetroWindow title="about_me.ts" id="bio" noPadding>
       
-      {/* Removed the inner borders and shadow! */}
       <div className="font-mono text-base md:text-lg flex bg-card overflow-hidden">
         
         <div className="flex flex-col text-muted-foreground py-6 pl-4 pr-4 border-r-2 border-border select-none text-right opacity-50 hidden md:flex">

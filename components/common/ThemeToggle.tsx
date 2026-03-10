@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useTheme } from "next-themes"
-import { Moon, Sun } from "lucide-react" // Using Sun and Moon!
+import { Moon, Sun } from "lucide-react"
 
 import {
   DropdownMenu,
@@ -25,7 +25,6 @@ export function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="flex items-center justify-center p-1.5 text-foreground cursor-pointer outline-none focus:outline-none transition-none">
-          {/* Dynamically swaps between Sun and Moon based on the active theme */}
           {resolvedTheme === "dark" ? (
              <Moon className="w-6 h-6 stroke-3" />
           ) : (

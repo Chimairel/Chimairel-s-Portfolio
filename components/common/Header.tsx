@@ -32,7 +32,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background text-foreground w-full px-6 pt-6 pb-2 flex justify-center transition-colors duration-200">
       <div className="flex justify-between items-center w-full max-w-6xl border-b-2 border-border pb-4">
         
-        {/* Logo Section */}
+        {/* Logo */}
         <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
           <div className="w-4 h-4 bg-foreground rounded-full"></div>
           <Link href="/">
@@ -40,10 +40,9 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Right Side: Navigation & Toggles */}
         <div className="flex items-center gap-4 md:gap-6">
           
-          {/* DESKTOP NAV */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex gap-2 font-semibold">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -52,10 +51,10 @@ export function Header() {
                   key={link.name} 
                   href={link.href} 
                   className={cn(
-                    "px-3 py-1 transition-none", // Added padding so the fill looks like a neat box
+                    "px-3 py-1 transition-none",
                     active 
-                      ? "bg-foreground text-background" // ACTIVE: Solid fill, inverted text
-                      : "text-foreground hover:bg-foreground hover:text-background" // INACTIVE: Transparent, fills on hover
+                      ? "bg-foreground text-background"
+                      : "text-foreground hover:bg-foreground hover:text-background"
                   )}
                 >
                   {link.name}
@@ -64,12 +63,12 @@ export function Header() {
             })}
           </nav>
 
-          {/* MOBILE NAV */}
+          {/* Mobile Nav */}
           <div className="flex md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center justify-center p-1.5 text-foreground cursor-pointer outline-none focus:outline-none transition-none">
-                  <Menu className="w-6 h-6 stroke-[3]" />
+                  <Menu className="w-6 h-6 stroke-3" />
                   <span className="sr-only">Open Menu</span>
                 </button>
               </DropdownMenuTrigger>
@@ -82,7 +81,7 @@ export function Header() {
                       asChild 
                       className={cn(
                         "cursor-pointer rounded-none transition-none focus:bg-foreground focus:text-background",
-                        active && "bg-foreground text-background" // Forces the active item to stay filled in the dropdown
+                        active && "bg-foreground text-background"
                       )}
                     >
                       <Link href={link.href}>

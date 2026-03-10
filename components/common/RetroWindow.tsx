@@ -36,7 +36,6 @@ export function RetroWindow({ title, children, id, className, variant = "default
         )}
       </div>
 
-      {/* CHANGED: If noPadding is true, it removes the default padding! */}
       <div className={cn(
         isCard || noPadding ? "" : "p-6 md:p-8" 
       )}>

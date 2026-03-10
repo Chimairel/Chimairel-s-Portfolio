@@ -2,16 +2,12 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    // Removed the border and padding-top from here
     <footer className="bg-background text-foreground w-full px-6 pb-12 mt-20 flex justify-center">
       
-      {/* Moved the border-t-2 here so it matches the 6xl width of your content */}
       <div className="w-full max-w-6xl pt-10 border-t-2 border-border flex flex-col gap-12">
         
-        {/* Top Section: Columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 font-mono">
           
-          {/* Column 1: Identity */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold uppercase tracking-widest underline underline-offset-4 decoration-2">
               Chimairel.app
@@ -23,7 +19,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Pages */}
+          {/* Footer Nav */}
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground opacity-70">// Pages</h4>
             <nav className="flex flex-col gap-2 text-sm font-bold">
@@ -34,8 +30,8 @@ export function Footer() {
               <Link href="/contact" className="hover:text-blue-600 transition-colors underline-offset-2 hover:underline">Contact</Link>
             </nav>
           </div>
-
-          {/* Column 3: Resources */}
+          
+          {/* Footer Resources */}
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground opacity-70">// Resources</h4>
             <nav className="flex flex-col gap-2 text-sm font-bold">
@@ -45,7 +41,7 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Column 4: Connect */}
+          {/* Footer Connect */}
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground opacity-70">// Connect</h4>
             <nav className="flex flex-col gap-2 text-sm font-bold">
@@ -57,7 +53,6 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Section: Copyright */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-xs font-bold tracking-widest uppercase font-mono">
           <p>© 2026 CHIMAIREL PACALDO. ALL RIGHTS RESERVED.</p>
           <p className="mt-2 md:mt-0 text-muted-foreground opacity-70">SYSTEM_STATUS: STABLE // INSPIRED BY CLASSIC OS</p>

@@ -2,7 +2,6 @@ export function Connections() {
   return (
     <div className="flex flex-col gap-8 font-mono h-full p-6 md:p-10 transition-colors duration-200 bg-transparent">
       
-      {/* Header Section */}
       <div className="border-b-2 border-current pb-4">
         <h2 className="text-2xl font-bold tracking-tight uppercase">
           System Status
@@ -13,7 +12,6 @@ export function Connections() {
         </p>
       </div>
 
-      {/* Info Body */}
       <div className="flex flex-col gap-6 text-base leading-relaxed grow">
         
         <div>
@@ -35,7 +33,6 @@ export function Connections() {
           </a>
         </div>
 
-        {/* Social Directories */}
         <div>
           <span className="font-bold opacity-60 uppercase tracking-widest block mb-2 text-sm">
             // External Directories

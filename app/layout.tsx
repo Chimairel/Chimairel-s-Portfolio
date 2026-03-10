@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "styles/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Chimialrel's Portfolio",
@@ -27,6 +28,7 @@ export default function RootLayout({
       className={cn("antialiased font-sans", spaceMono.variable)}
     >
       <body>
+        <ScrollToTop />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

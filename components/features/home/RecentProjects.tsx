@@ -5,7 +5,6 @@ import { RetroWindow } from "@/components/common/RetroWindow";
 import { projectsData } from "@/constants/projects"; 
 
 export function RecentProjects() {
-  // Grab the 2 most recent projects dynamically
   const recentProjects = [...projectsData].reverse().slice(0, 2);
 
   return (
@@ -50,7 +49,6 @@ export function RecentProjects() {
 
       </div>
 
-      {/* CHANGED: Replaced the Button with a conversational text link! */}
       <div className="mt-10 pt-6 border-t-2 border-border flex justify-center w-full text-center font-mono">
         <p className="text-muted-foreground text-sm md:text-base">
           &gt; Want to see what else I've been building? You can{" "}
