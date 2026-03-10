@@ -35,7 +35,7 @@ export function CodeEditorBio() {
             </p>
 
             <p className="mt-4 mb-2 leading-relaxed pl-2 md:pl-4 pr-2">
-              When I'm not studying for classes or debugging layouts, I'm usually working on my capstone project, NutriMind, or developing FlavorMix.
+              When I'm not studying for classes or debugging layouts, I'm usually working on my capstone project, NutriMind, or playing Roblox.
             </p>
           </div>
           

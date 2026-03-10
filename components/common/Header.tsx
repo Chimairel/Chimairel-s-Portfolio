@@ -51,7 +51,7 @@ export function Header() {
                   key={link.name} 
                   href={link.href} 
                   className={cn(
-                    "px-3 py-1 transition-none",
+                    "px-3 py-1 transition-none font-mono uppercase tracking-widest text-sm",
                     active 
                       ? "bg-foreground text-background"
                       : "text-foreground hover:bg-foreground hover:text-background"

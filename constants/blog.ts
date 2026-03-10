@@ -1,3 +1,20 @@
+export const BLOG_CATEGORIES = [
+  { name: "Web Dev", slug: "web-development" },
+  { name: "Hardware", slug: "hardware" },
+  { name: "Startup", slug: "technopreneurship" },
+  { name: "CS", slug: "computer-science" },
+];
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  image: string;
+}
+
 export const blogData = [
   {
     id: 1,

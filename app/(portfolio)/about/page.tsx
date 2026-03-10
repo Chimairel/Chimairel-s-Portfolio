@@ -8,6 +8,7 @@ export default function AboutPage() {
         
         <CodeEditorBio />
         <TerminalSpecs />
+        <p>//try changing directory</p>
         
       </div>
     </main>
