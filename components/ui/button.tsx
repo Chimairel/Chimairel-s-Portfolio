@@ -5,32 +5,33 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center border-2 border-border bg-background text-sm font-bold uppercase tracking-widest whitespace-nowrap transition-none outline-none select-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  // The Base: Exact borders, bold font, and your custom 0.1s transition
+  "group/button inline-flex shrink-0 items-center justify-center border-2 border-border text-sm font-bold tracking-widest whitespace-nowrap outline-none select-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-100 ease-in-out [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
+        // Equivalent to your .retro-button (The #e0e0e0 grey button)
         default: 
-          "bg-background text-foreground shadow-[4px_4px_0px_0px_currentColor] hover:bg-foreground hover:text-background hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px]",
+          "bg-[#e0e0e0] text-black dark:bg-secondary dark:text-secondary-foreground shadow-[2px_2px_0px_0px_var(--color-border)] hover:bg-[#d0d0d0] dark:hover:bg-secondary/80 hover:shadow-[1px_1px_0px_0px_var(--color-border)] hover:translate-x-[1px] hover:translate-y-[1px] active:bg-[#c0c0c0] dark:active:bg-secondary/50 active:shadow-none active:translate-x-[2px] active:translate-y-[2px]",
+        
+        // Equivalent to your .retro-link-button (The white window button)
         outline:
-          "border-border bg-background hover:bg-foreground hover:text-background",
+          "bg-card text-foreground shadow-[2px_2px_0px_0px_var(--color-border)] hover:bg-[#f0f0f0] dark:hover:bg-secondary/50 hover:shadow-[1px_1px_0px_0px_var(--color-border)] hover:translate-x-[1px] hover:translate-y-[1px] active:bg-[#e0e0e0] dark:active:bg-secondary active:shadow-none active:translate-x-[2px] active:translate-y-[2px]",
+        
         secondary:
-          "bg-secondary text-secondary-foreground shadow-[4px_4px_0px_0px_currentColor] hover:bg-foreground hover:text-background hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]",
+          "bg-secondary text-secondary-foreground shadow-[2px_2px_0px_0px_var(--color-border)] hover:bg-secondary/80 hover:shadow-[1px_1px_0px_0px_var(--color-border)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]",
         ghost:
-          "border-transparent hover:border-border hover:bg-foreground hover:text-background",
+          "border-transparent hover:border-border hover:bg-muted hover:text-foreground",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-[4px_4px_0px_0px_currentColor] hover:bg-foreground hover:text-background hover:shadow-none",
+          "bg-destructive text-destructive-foreground shadow-[2px_2px_0px_0px_var(--color-border)] hover:bg-destructive/90 hover:shadow-[1px_1px_0px_0px_var(--color-border)] hover:translate-x-[1px] hover:translate-y-[1px]",
         link: "border-transparent text-foreground underline-offset-4 hover:underline shadow-none",
       },
       size: {
-        
-        default: "h-10 gap-2 px-6",
-        xs: "h-7 gap-1 px-2 text-xs",
-        sm: "h-9 gap-1.5 px-3 text-[0.8rem]",
-        lg: "h-12 gap-2 px-8 text-base",
-        icon: "size-10",
-        "icon-xs": "size-7",
-        "icon-sm": "size-8",
-        "icon-lg": "size-12",
+        default: "h-11 px-6 py-3", // Matched to your 0.75rem 1.5rem padding
+        xs: "h-7 px-2 text-xs",
+        sm: "h-9 px-3 text-[0.8rem]",
+        lg: "h-12 px-8 text-base",
+        icon: "size-11",
       },
     },
     defaultVariants: {

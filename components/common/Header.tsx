@@ -1,41 +1,102 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { Menu } from "lucide-react"; 
+import { cn } from "@/lib/utils"; 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+];
 
 export function Header() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
-    
-    <header className="bg-background text-foreground w-full px-6 pt-6 flex justify-center">
-      
-      
+    <header className="sticky top-0 z-50 bg-background text-foreground w-full px-6 pt-6 pb-2 flex justify-center transition-colors duration-200">
       <div className="flex justify-between items-center w-full max-w-6xl border-b-2 border-border pb-4">
         
+        {/* Logo Section */}
         <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
           <div className="w-4 h-4 bg-foreground rounded-full"></div>
-          <Link href="#">
+          <Link href="/">
             <span>Chimairel.app</span>
           </Link>
         </div>
 
-        <div className="flex items-center gap-6">
-          <nav className="hidden md:flex gap-6 font-semibold">
-            <Link href="#" className="hover:underline hover:decoration-2 underline-offset-4">
-              Home
-            </Link>
-            <Link href="#about" className="hover:underline hover:decoration-2 underline-offset-4">
-              About
-            </Link>
-            <Link href="#projects" className="hover:underline hover:decoration-2 underline-offset-4">
-              Projects
-            </Link>
-            <Link href="#blog" className="hover:underline hover:decoration-2 underline-offset-4">
-              Blog
-            </Link>
-            <Link href="#contact" className="hover:underline hover:decoration-2 underline-offset-4">
-              Contact
-            </Link>
-          </nav>
+        {/* Right Side: Navigation & Toggles */}
+        <div className="flex items-center gap-4 md:gap-6">
           
+          {/* DESKTOP NAV */}
+          <nav className="hidden md:flex gap-2 font-semibold">
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link 
+                  key={link.name} 
+                  href={link.href} 
+                  className={cn(
+                    "px-3 py-1 transition-none", // Added padding so the fill looks like a neat box
+                    active 
+                      ? "bg-foreground text-background" // ACTIVE: Solid fill, inverted text
+                      : "text-foreground hover:bg-foreground hover:text-background" // INACTIVE: Transparent, fills on hover
+                  )}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* MOBILE NAV */}
+          <div className="flex md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center justify-center p-1.5 text-foreground cursor-pointer outline-none focus:outline-none transition-none">
+                  <Menu className="w-6 h-6 stroke-[3]" />
+                  <span className="sr-only">Open Menu</span>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 border-2 border-border rounded-none bg-card text-foreground font-bold uppercase tracking-wider shadow-none">
+                {navLinks.map((link) => {
+                  const active = isActive(link.href);
+                  return (
+                    <DropdownMenuItem 
+                      key={link.name} 
+                      asChild 
+                      className={cn(
+                        "cursor-pointer rounded-none transition-none focus:bg-foreground focus:text-background",
+                        active && "bg-foreground text-background" // Forces the active item to stay filled in the dropdown
+                      )}
+                    >
+                      <Link href={link.href}>
+                        {link.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
           <ThemeToggle />
+          
         </div>
       </div>
     </header>
