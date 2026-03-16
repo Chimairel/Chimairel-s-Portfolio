@@ -1,7 +1,7 @@
 import { Space_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import "styles/globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/providers/theme-provider"
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "@/components/common/ScrollToTop";
 

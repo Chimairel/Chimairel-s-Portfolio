@@ -67,7 +67,7 @@ export function Header() {
           <div className="flex md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="flex items-center justify-center p-1.5 text-foreground cursor-pointer outline-none focus:outline-none transition-none">
+                <button suppressHydrationWarning className="flex items-center justify-center p-1.5 text-foreground cursor-pointer outline-none focus:outline-none transition-none">
                   <Menu className="w-6 h-6 stroke-3" />
                   <span className="sr-only">Open Menu</span>
                 </button>
