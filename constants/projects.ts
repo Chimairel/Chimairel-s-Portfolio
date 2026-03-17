@@ -22,8 +22,8 @@ export const projectsData = [
     fileName: "NutriMind.app",
     title: "NutriMind",
     description: "An AI-powered personalized nutrition and meal planner designed to help users track their dietary goals and generate smart meal recommendations.",
-    image: "/nutrimind.png",
-    link: "/projects/nutrimind",
+    image: "/NutriMind.png",
+    link: "https://www.figma.com/design/kSBN6j5NP6aRVSzrrZ5jfh/HCI?node-id=0-1&t=ZA6Pp3ClyDEvD5BO-1",
     openInNewTab: false,
   }
 ];

@@ -13,19 +13,19 @@ export default function ContactPage() {
         className="grow max-w-6xl mx-auto [&>div:last-child]:flex [&>div:last-child]:flex-col [&>div:last-child]:grow"
       >
     
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full grow items-stretch overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-full grow items-stretch overflow-hidden">
 
-            {/* 2 SECTIONS PERO NAKA ROW INSTEAD OF COLUMN */}
+        {/* 2 SECTIONS PERO NAKA ROW INSTEAD OF COLUMN */}
 
-          <div className="bg-background text-foreground transition-colors duration-200 border-b-2 lg:border-b-0 lg:border-r-2 border-border h-full">
-            <SendMessage />
-          </div>
-
-          <div className="bg-[#121212] border border-white text-[#e5e5e5] dark:bg-[#e5e5e5] dark:text-[#121212] dark:border dark:border-black transition-colors duration-200 h-full">
-            <Connections />
-          </div>
-
+        <div className="bg-background text-foreground transition-colors duration-200 border-b-2 lg:border-b-0 lg:border-r-2 border-border h-full">
+          <SendMessage />
         </div>
+
+        <div className="bg-[#121212] border border-white text-[#e5e5e5] dark:bg-[#e5e5e5] dark:text-[#121212] dark:border dark:border-black transition-colors duration-200 h-full">
+          <Connections />
+        </div>
+
+      </div>
 
       </RetroWindow>
 

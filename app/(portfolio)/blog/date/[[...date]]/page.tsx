@@ -4,14 +4,12 @@ import { BlogDateContent } from "@/components/features/blog/BlogDateContent";
 type Props = { params: Promise<{ date?: string[] }> };
 
 export default async function BlogDatePage({ params }: Props) {
-  // Corrected 'slug' to 'date' so it matches the folder name [[...date]]
   const { date } = await params;
   const segments = date || [];
   const year = segments[0];
   const month = segments[1];
   const day = segments[2];
 
-  // The Professor's Server-Side Filtering Logic
   const filteredPosts = BLOG_POSTS.filter((post) => {
     if (!year) return true;
     const postDate = new Date(post.date);
